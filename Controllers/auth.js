@@ -7,7 +7,7 @@ dotenv.config();
 let Key=process.env.SECRET_KEY
 
 async function isAuthenticated(req,res,next){
-    if(req.header){
+    if(req.headers){
         try {
             let token=req.headers["x-auth"]
             if(!token){
@@ -16,6 +16,9 @@ async function isAuthenticated(req,res,next){
             let decode=jwt.verify(token,Key)
             console.log(decode)
             req.user=await UserDataById(decode.id)
+            if(!req.user){
+                 return res.status(400).json({message:"Invalid Authorization"})
+            }
             next()
         } catch (error) {
             console.log(error);
