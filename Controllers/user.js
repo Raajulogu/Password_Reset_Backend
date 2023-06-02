@@ -10,6 +10,12 @@ export let generateJwtToken=(id)=>{
 return jwt.sign({id},Key)
 }
 
+//Get All users
+export function AllUsers(){
+    return client.db("password_reset").collection("User")
+    .find().toArray()
+}
+
 //Getuser by Email
 export function UserDataByEmail(email){
     return client.db("password_reset").collection("User")
