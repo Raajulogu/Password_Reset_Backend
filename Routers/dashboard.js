@@ -7,7 +7,7 @@ let router=express.Router();
 
 router.get("/all",async(req,res)=>{
     try {
-        let users=await AllUsers();
+        let users=req.user;
         if(!users){
             res.status(400).json({message:"No users Available"})
         }

@@ -7,7 +7,7 @@ dotenv.config();
 let Key=process.env.SECRET_KEY
 
 async function isAuthenticated(req,res,next){
-    if(req.headers){
+    if(req.header){
         try {
             let token=req.headers["x-auth"]
             if(!token){
