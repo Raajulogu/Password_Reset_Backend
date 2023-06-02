@@ -7,7 +7,7 @@ dotenv.config()
 let Key=process.env.SECRET_KEY;
 
 export let generateJwtToken=(id)=>{
-return jwt.sign({id},Key)
+return jwt.sign({id},Key,{expiresIn:"1d"})
 }
 
 //Get All users

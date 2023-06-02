@@ -1,5 +1,5 @@
 import express from "express";
-import { AllUsers } from "../Controllers/user";
+import { AllUsers } from "../Controllers/user.js";
 
 
 
