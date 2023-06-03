@@ -6,12 +6,14 @@ import { isAuthenticated } from "./Controllers/auth.js";
 import { forgot } from "./Routers/forgot.js";
 import { resetPassword } from "./Routers/reset.js";
 import { ResetPassword } from "./Routers/newpassword.js";
+import cors from "cors";
 
 dotenv.config()
 
 let app=express();
 
 app.use(express.json())
+app.use(cors())
 
 let PORT=process.env.PORT;
 
