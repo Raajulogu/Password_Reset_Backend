@@ -4,7 +4,7 @@ import { deleteString, getString, getToken } from "../Controllers/user.js";
 
 let router=express.Router();
 
-router.get("/resets",async(req,res)=>{
+router.post("/resets",async(req,res)=>{
     if(!req.headers){
         return res.status(400).json({message:"Inavlid Authorization"})
     }
