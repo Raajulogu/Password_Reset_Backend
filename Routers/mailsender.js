@@ -20,7 +20,7 @@ let recieve={
     from:"rajeshkumarlogu145@gmail.com",
     to:reciever,
     subject:"Reset Your Password",
-    text:`Your Password reset code is given below, click the link ${token}
+    text:`Your Password reset code is given below, click the link https://password-reset-backend-zztf.vercel.app//reset/resets/${token}
             ${text} `
 };
 
