@@ -7,9 +7,9 @@ dotenv.config();
 let Key=process.env.SECRET_KEY
 
 async function isAuthenticated(req,res,next){
-    if(req.header){
+    if(req.headers){
         try {
-            let token=req.headers["x-auth"]
+            let token=await req.headers["x-auth"]
             if(!token){
                 return res.status(400).json({message:"Invalid Authorization"})
             }

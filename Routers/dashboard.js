@@ -1,6 +1,4 @@
 import express from "express";
-import { AllUsers } from "../Controllers/user.js";
-
 
 
 let router=express.Router();
