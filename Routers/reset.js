@@ -4,12 +4,12 @@ import { deleteString, getString, getToken } from "../Controllers/user.js";
 
 let router=express.Router();
 
-router.get("/resets/:token",async(req,res)=>{
-    if(!req.params){
+router.get("/resets",async(req,res)=>{
+    if(!req.headers){
         return res.status(400).json({message:"Inavlid Authorization"})
     }
     try {
-        let token=req.params.token
+        let token=req.headers["x-auth"]
         let tokens=await getToken(token)
         if(!tokens){
             return res.status(400).json({message:"Inavlid Authorization"})
