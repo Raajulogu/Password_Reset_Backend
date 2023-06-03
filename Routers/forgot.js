@@ -17,7 +17,7 @@ router.post("/mail",async(req,res)=>{
         let token=await MailSender(reciever.email,text)
         let addstring=await addString(text,token)
 
-        res.status(200).json({message:"Mail sent Successfully",result:token})
+        res.status(200).json({message:"Mail sent Successfully",token:token})
     } catch (error) {
         console.log(error);
         res.status(500).json({message:"Internal Server Error"})
